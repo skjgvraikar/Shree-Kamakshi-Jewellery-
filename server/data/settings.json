@@ -1,0 +1,37 @@
+{
+  "name": "Shree Kamakshi Jewellery Works",
+  "tagline": "Traditional Craftsmanship • Pure 916 Hallmark Gold • Trusted Generations",
+  "phones": [
+    "9448628575",
+    "8660419854"
+  ],
+  "email": "skjgvraikar@gmail.com",
+  "whatsapp": "https://wa.me/919448628575",
+  "address": {
+    "line1": "B H Road",
+    "city": "Talaguppa",
+    "pincode": "577430",
+    "state": "Karnataka",
+    "full": "B H Road, Talaguppa – 577430"
+  },
+  "hours": {
+    "display": "Open every day, 10:00 am – 2:30 pm and 4:00 pm – 9:30 pm. Sunday holiday.",
+    "morningOpen": "10:00",
+    "morningClose": "14:30",
+    "eveningOpen": "16:00",
+    "eveningClose": "21:30",
+    "closedDays": [
+      0
+    ]
+  },
+  "owner": {
+    "name": "Veerendra G Raikar",
+    "title": "Proprietor & Master Craftsman",
+    "photo": "/images/owner.jpg",
+    "quote": "Crafting trust, purity and elegance into every ornament — serving families across Talaguppa with pride and passion.",
+    "fatherName": "Late Sri G. Raikar",
+    "fatherPhoto": "/images/owner.jpg",
+    "fatherTribute": "Founded on the timeless wisdom and sacred craftsmanship of our beloved founder, Late Sri G. Raikar, who believed a goldsmith’s greatest asset is uncompromised honesty and unwavering purity.",
+    "legacyStory": "For decades, Shree Kamakshi Jewellery Works has been a cornerstone of trust in Talaguppa. From bridal temple necklaces to heirloom bangles and sacred pooja silver, each creation is crafted with devotion, certified 916 BIS Hallmark purity, and transparent pricing that honors our ancestral commitment."
+  }
+}

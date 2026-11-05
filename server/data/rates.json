@@ -1,0 +1,20 @@
+{
+  "gold22": 11468,
+  "gold24": 12510,
+  "gold18": 9383,
+  "silver": 160,
+  "silverKg": 160000,
+  "updatedAt": "2026-11-05T17:08:09.115Z",
+  "change": {
+    "gold22": "+ ₹173 (+1.54%)",
+    "gold24": "+ ₹189 (+1.54%)",
+    "silver": "+ ₹2 (+1.00%)",
+    "gold22Direction": "up",
+    "gold24Direction": "up",
+    "silverDirection": "up"
+  },
+  "fetchedAtIST": "05 Nov 2026, 10:38 pm IST",
+  "source": "metalcharts_api",
+  "disclaimer": "Live bullion spot rates synchronized every 6 hours via live bullion market feeds. Actual showroom billing price may vary slightly based on local market fluctuations and GST.",
+  "disclaimerKn": "ಮಾರುಕಟ್ಟೆ ದರಗಳು ಪ್ರತಿ 6 ಗಂಟೆಗಳಿಗೊಮ್ಮೆ ನವೀಕರಣಗೊಳ್ಳುತ್ತವೆ. ಸ್ಥಳೀಯ ಮಾರುಕಟ್ಟೆ ಬದಲಾವಣೆಗಳಿಗೆ ಅನುಗುಣವಾಗಿ ಶೋರೂಂ ಬಿಲ್ಲಿಂಗ್ ದರಗಳಲ್ಲಿ ಸಣ್ಣ ವ್ಯತ್ಯಾಸವಿರಬಹುದು."
+}

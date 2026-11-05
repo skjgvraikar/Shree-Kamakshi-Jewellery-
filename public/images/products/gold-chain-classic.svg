@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#1e1305" />
+      <stop offset="100%" stop-color="#080401" />
+    </radialGradient>
+    <linearGradient id="metal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c9a84c" />
+      <stop offset="50%" stop-color="#f0d080" />
+      <stop offset="100%" stop-color="#c9a84c" />
+    </linearGradient>
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c9a84c" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#f0d080" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#c9a84c" stop-opacity="0.3"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <rect width="600" height="600" fill="url(#bg)" />
+
+  <!-- Decorative Mandala Ring -->
+  <circle cx="300" cy="270" r="180" fill="none" stroke="url(#borderGrad)" stroke-width="1.5" stroke-dasharray="8 6" opacity="0.4"/>
+  <circle cx="300" cy="270" r="150" fill="none" stroke="url(#borderGrad)" stroke-width="1" opacity="0.6"/>
+  <circle cx="300" cy="270" r="110" fill="rgba(201,168,76,0.04)" />
+
+  <!-- Central Emblem / Visual -->
+  <g filter="url(#glow)">
+    <circle cx="300" cy="270" r="85" fill="none" stroke="url(#metal)" stroke-width="3"/>
+    <circle cx="300" cy="270" r="75" fill="none" stroke="#c9a84c" stroke-width="1" stroke-dasharray="4 4" opacity="0.8"/>
+  </g>
+
+  <text x="300" y="290" font-size="64" text-anchor="middle">⛓️</text>
+
+  <!-- Typography -->
+  <text x="300" y="470" font-family="'Cinzel', Georgia, serif" font-size="24" font-weight="600" fill="url(#metal)" text-anchor="middle" letter-spacing="2">
+    CLASSIC ROPE GOLD CHAIN
+  </text>
+  <text x="300" y="505" font-family="'Cormorant Garamond', serif" font-size="18" fill="#d6cbbe" text-anchor="middle" letter-spacing="3">
+    SHREE KAMAKSHI JEWELLERY • CHAINS
+  </text>
+
+  <rect x="250" y="525" width="100" height="1.5" fill="url(#metal)" opacity="0.7"/>
+</svg>

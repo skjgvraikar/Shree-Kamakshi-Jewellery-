@@ -1,0 +1,45 @@
+:root {
+  --gold: #d4af37;
+  --gold-light: #f5df97;
+  --gold-dark: #997517;
+  --gold-pale: #fdf5df;
+  --deep: #0a0602;
+  --deep-card: #140d04;
+  --cream: #fbf7ee;
+  --cream-muted: #c8beaf;
+  --silver: #c0c0c0;
+  --silver-light: #f0f0f0;
+  --silver-dark: #888888;
+  --red: #8b1a1a;
+  --border-gold: rgba(212, 175, 55, 0.22);
+  --border-gold-glow: rgba(245, 223, 151, 0.5);
+  --shadow-gold: 0 4px 20px rgba(212, 175, 55, 0.18);
+}
+
+/* Luxury Champagne Gold Text Gradient */
+.gold-text-gradient {
+  background: linear-gradient(135deg, #ffffff 0%, #f7e7b4 35%, #d4af37 70%, #b8860b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.silver-text-gradient {
+  background: linear-gradient(135deg, #ffffff 0%, #e6e6e6 45%, #c0c0c0 75%, #999999 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Glassmorphism with gold border */
+.glass-gold-card {
+  background: rgba(18, 12, 4, 0.72);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-gold);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 0 15px rgba(212, 175, 55, 0.04);
+  transition: all 0.3s ease;
+}
+
+.glass-gold-card:hover {
+  border-color: rgba(245, 223, 151, 0.45);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.65), 0 0 20px rgba(212, 175, 55, 0.18);
+}

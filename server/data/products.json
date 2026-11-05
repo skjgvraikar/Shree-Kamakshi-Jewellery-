@@ -1,0 +1,338 @@
+[
+  {
+    "id": "prod-1",
+    "name": "Lakshmi Temple Necklace",
+    "category": "Necklaces",
+    "images": [
+      "/images/products/lakshmi-temple-necklace.webp",
+      "/images/products/temple-jewellery.webp",
+      "/images/products/gold-choker-necklace-set.webp"
+    ],
+    "description": "Exquisite handcrafted 22K temple necklace featuring goddess Lakshmi medallion flanked by intricately carved floral paisleys and ruby-tinted accents.",
+    "badge": "Heirloom"
+  },
+  {
+    "id": "prod-2",
+    "name": "Royal Gold Choker Set",
+    "category": "Necklaces",
+    "images": [
+      "/images/products/gold-choker-necklace-set.webp",
+      "/images/products/choker-necklaces.jpg",
+      "/images/products/gold-bead-necklace.webp"
+    ],
+    "description": "Magnificent bridal choker with textured gold bead drops and handcrafted mesh filigree, designed for majestic wedding celebrations.",
+    "badge": "Bridal Special"
+  },
+  {
+    "id": "prod-3",
+    "name": "Rani Haar Heritage Necklace",
+    "category": "Necklaces",
+    "images": [
+      "/images/products/rani-haar-long-necklaces.jpg",
+      "/images/products/gold-bead-necklace.webp",
+      "/images/products/pendant-necklaces.jpg"
+    ],
+    "description": "Grand multi-strand rani haar crafted in pure 916 gold with traditional South Indian embossing and cascading golden ghungroo motifs.",
+    "badge": "Signature"
+  },
+  {
+    "id": "prod-4",
+    "name": "Sacred Mangalsutra Chain",
+    "category": "Necklaces",
+    "images": [
+      "/images/products/mangalsutra-chains.jpg",
+      "/images/products/gold-bead-necklace.webp",
+      "/images/products/choker-necklaces.jpg"
+    ],
+    "description": "Traditional 22K gold mangalsutra featuring auspicious black beads interwoven with handcrafted gold barrels and a sacred pendant.",
+    "badge": "Auspicious"
+  },
+  {
+    "id": "prod-5",
+    "name": "Lariat Y-Form Necklace",
+    "category": "Necklaces",
+    "images": [
+      "/images/products/lariat-or-y-necklaces.webp",
+      "/images/products/pendant-necklaces.jpg",
+      "/images/products/gold-choker-necklace-set.webp"
+    ],
+    "description": "Modern elegance meets ethnic charm in this contemporary lariat silhouette adorned with cascading gold florets.",
+    "badge": "Contemporary"
+  },
+  {
+    "id": "prod-6",
+    "name": "Antique Pendant Necklace",
+    "category": "Necklaces",
+    "images": [
+      "/images/products/pendant-necklaces.jpg",
+      "/images/products/lakshmi-temple-necklace.webp",
+      "/images/products/gold-bead-necklace.webp"
+    ],
+    "description": "Delicately balanced gold pendant suspended on a hallmarked cable chain with antique finish and micro-engraved borders.",
+    "badge": "Daily Luxury"
+  },
+  {
+    "id": "prod-7",
+    "name": "Peacock Carved Kada",
+    "category": "Bangles",
+    "images": [
+      "/images/products/peacock-kada.svg",
+      "/images/products/kangan-pair.svg",
+      "/images/products/hinged-bangle.svg"
+    ],
+    "description": "Masterwork solid 22K gold kada featuring majestic confronting peacock finials and deep hand-engraved plumage.",
+    "badge": "Masterpiece"
+  },
+  {
+    "id": "prod-8",
+    "name": "Classic Traditional Gold Bangles",
+    "category": "Bangles",
+    "images": [
+      "/images/products/plain-gold-bangles.svg",
+      "/images/products/hinged-bangle.svg",
+      "/images/products/kangan-pair.svg"
+    ],
+    "description": "A set of daily-wear 916 gold bangles featuring mirror-polished bevels and subtle diamond-cut facets that catch the light.",
+    "badge": "Bestseller"
+  },
+  {
+    "id": "prod-9",
+    "name": "Royal Kangan Pair",
+    "category": "Bangles",
+    "images": [
+      "/images/products/kangan-pair.svg",
+      "/images/products/peacock-kada.svg",
+      "/images/products/plain-gold-bangles.svg"
+    ],
+    "description": "Broad ceremonial kangans featuring raised temple motifs, fine granulation work, and smooth inner contours for comfortable wear.",
+    "badge": "Heritage"
+  },
+  {
+    "id": "prod-10",
+    "name": "Hinged Openable Bangle",
+    "category": "Bangles",
+    "images": [
+      "/images/products/hinged-bangle.svg",
+      "/images/products/plain-gold-bangles.svg",
+      "/images/products/kangan-pair.svg"
+    ],
+    "description": "Precision engineered snap-lock bangle in hallmarked gold, designed for effortless slip-on fit without compromising strength.",
+    "badge": "Ergonomic"
+  },
+  {
+    "id": "prod-11",
+    "name": "Traditional Jhumkas (Jhumki)",
+    "category": "Earrings",
+    "images": [
+      "/images/products/jhumkas-jhumki.jpg",
+      "/images/products/chandbalis.webp",
+      "/images/products/stud-earrings-tops.jpg"
+    ],
+    "description": "Classic bell-shaped 22K gold jhumkas adorned with delicate hanging pearls and filigree dome filigree.",
+    "badge": "Festive Classic"
+  },
+  {
+    "id": "prod-12",
+    "name": "Royal Chandbalis",
+    "category": "Earrings",
+    "images": [
+      "/images/products/chandbalis.webp",
+      "/images/products/jhumkas-jhumki.jpg",
+      "/images/products/drop-dangle-earrings.jpg"
+    ],
+    "description": "Crescent moon earrings with intricate openwork lacework, studded stone accents, and cascading golden drops.",
+    "badge": "Royal Elegance"
+  },
+  {
+    "id": "prod-13",
+    "name": "Gold Sui Dhaga Earrings",
+    "category": "Earrings",
+    "images": [
+      "/images/products/sui-dhaga.jpg",
+      "/images/products/drop-dangle-earrings.jpg",
+      "/images/products/stud-earrings-tops.jpg"
+    ],
+    "description": "Slender threader earrings in yellow gold that glide smoothly through the ear lobe, creating a graceful floating look.",
+    "badge": "Delicate"
+  },
+  {
+    "id": "prod-14",
+    "name": "Kundan & Polki Dangler",
+    "category": "Earrings",
+    "images": [
+      "/images/products/kundan-polki.jpg",
+      "/images/products/chandelier-earrings.webp",
+      "/images/products/chandbalis.webp"
+    ],
+    "description": "Traditional uncut stone settings framed in pure 22K gold foil with meenakari enameling on the reverse side.",
+    "badge": "Imperial"
+  },
+  {
+    "id": "prod-15",
+    "name": "Classic Gold Studs (Tops)",
+    "category": "Earrings",
+    "images": [
+      "/images/products/stud-earrings-tops.jpg",
+      "/images/products/hoops-bali.webp",
+      "/images/products/bugadi.jpg"
+    ],
+    "description": "Everyday elegance crafted in pure 916 gold with secure screw backs and sparkling micro-texture facets.",
+    "badge": "Daily Wear"
+  },
+  {
+    "id": "prod-16",
+    "name": "Traditional Bugadi",
+    "category": "Earrings",
+    "images": [
+      "/images/products/bugadi.jpg",
+      "/images/products/ear-cuffs.webp",
+      "/images/products/stud-earrings-tops.jpg"
+    ],
+    "description": "Authentic Karnataka & Konkan ear helix ornament featuring intricate floral motifs and pearl finials.",
+    "badge": "Authentic Regional"
+  },
+  {
+    "id": "prod-17",
+    "name": "Engagement Solitaire Ring",
+    "category": "Rings",
+    "images": [
+      "/images/products/engagement-solitaire-rings.jpg",
+      "/images/products/eternity-half-eternity-bands.jpg",
+      "/images/products/cocktail-statement-rings.jpg"
+    ],
+    "description": "Timeless solitaire setting on a tapering 22K gold shank, symbolizing eternal love and sacred beginnings.",
+    "badge": "Engagement"
+  },
+  {
+    "id": "prod-18",
+    "name": "Plain & Classic Wedding Band",
+    "category": "Rings",
+    "images": [
+      "/images/products/plain-classic-bands.avif",
+      "/images/products/eternity-half-eternity-bands.jpg",
+      "/images/products/signet-rings.jpg"
+    ],
+    "description": "Comfort-fit pure hallmarked gold wedding band with seamless inner curve and mirror-gloss outer finish.",
+    "badge": "Everlasting"
+  },
+  {
+    "id": "prod-19",
+    "name": "Cocktail Statement Ring",
+    "category": "Rings",
+    "images": [
+      "/images/products/cocktail-statement-rings.jpg",
+      "/images/products/cultural-symbolic-rings.jpg",
+      "/images/products/engagement-solitaire-rings.jpg"
+    ],
+    "description": "Showstopping dinner ring featuring elevated layered petals and hand-chiseled radiant engravings.",
+    "badge": "Celebration"
+  },
+  {
+    "id": "prod-20",
+    "name": "Cultural & Symbolic Navaratna Ring",
+    "category": "Rings",
+    "images": [
+      "/images/products/cultural-symbolic-rings.jpg",
+      "/images/products/signet-rings.jpg",
+      "/images/products/stackable-rings.webp"
+    ],
+    "description": "Sacred astrology ring aligned with traditional Vedic gem placements in an auspicious 22K gold setting.",
+    "badge": "Vedic Sacred"
+  },
+  {
+    "id": "prod-21",
+    "name": "Gentleman Signet Ring",
+    "category": "Rings",
+    "images": [
+      "/images/products/signet-rings.jpg",
+      "/images/products/plain-classic-bands.avif",
+      "/images/products/cultural-symbolic-rings.jpg"
+    ],
+    "description": "Robust gentleman's signet with polished flat face suitable for family monograms or left as a sleek statement.",
+    "badge": "Distinguished"
+  },
+  {
+    "id": "prod-22",
+    "name": "Classic Rope Gold Chain",
+    "category": "Chains",
+    "images": [
+      "/images/products/gold-chain-classic.svg",
+      "/images/products/gold-chain-rudraksha.svg",
+      "/images/products/pendant-necklaces.jpg"
+    ],
+    "description": "Strong, flexible rope chain woven from solid 916 gold links, offering luminous sparkle with every turn.",
+    "badge": "Durable"
+  },
+  {
+    "id": "prod-23",
+    "name": "Auspicious Rudraksha Gold Chain",
+    "category": "Chains",
+    "images": [
+      "/images/products/gold-chain-rudraksha.svg",
+      "/images/products/gold-chain-classic.svg",
+      "/images/products/mangalsutra-chains.jpg"
+    ],
+    "description": "Genuine Panchamukhi Rudraksha beads encased in protective 22K gold flower caps and joined by sturdy wire joints.",
+    "badge": "Sacred Devotion"
+  },
+  {
+    "id": "prod-24",
+    "name": "Pure Silver Kolusu & Anklet",
+    "category": "Silver Items",
+    "images": [
+      "/images/products/silver-anklet.svg",
+      "/images/products/silver-bangles.svg",
+      "/images/products/silver-waist-belt.svg"
+    ],
+    "description": "Traditional 92.5 fine silver anklet with melodious sounding bells, flexible snake weave, and secure S-hook closure.",
+    "badge": "92.5 Sterling"
+  },
+  {
+    "id": "prod-25",
+    "name": "Karnataka Silver Hair Pin (Jada Bille)",
+    "category": "Silver Items",
+    "images": [
+      "/images/products/silver-hair-pin.svg",
+      "/images/products/silver-anklet.svg",
+      "/images/products/silver-kumkum-box.svg"
+    ],
+    "description": "Authentic bridal hair ornament featuring carved peacocks and floral medallions crafted in solid fine silver.",
+    "badge": "Bridal Antique"
+  },
+  {
+    "id": "prod-26",
+    "name": "Pure Silver Pooja Diya Lamp",
+    "category": "Silver Items",
+    "images": [
+      "/images/products/silver-pooja-diya.svg",
+      "/images/products/silver-kumkum-box.svg",
+      "/images/products/silver-bangles.svg"
+    ],
+    "description": "Handmade sacred silver oil lamp for daily household poojas and auspicious ceremonies, featuring heavy stable base.",
+    "badge": "Pooja Special"
+  },
+  {
+    "id": "prod-27",
+    "name": "Silver Kumkum & Haldi Box",
+    "category": "Silver Items",
+    "images": [
+      "/images/products/silver-kumkum-box.svg",
+      "/images/products/silver-pooja-diya.svg",
+      "/images/products/silver-hair-pin.svg"
+    ],
+    "description": "Twin auspicious container crafted in pure fine silver with peacock lid finial, ideal for gifting and festive shrines.",
+    "badge": "Festive Gift"
+  },
+  {
+    "id": "prod-28",
+    "name": "Traditional Silver Waist Belt (Kamarbandh)",
+    "category": "Silver Items",
+    "images": [
+      "/images/products/silver-waist-belt.svg",
+      "/images/products/silver-anklet.svg",
+      "/images/products/silver-bangles.svg"
+    ],
+    "description": "Royal ornamental silver belt with interconnected articulated plates, floral repoussé work, and adjustable waist loops.",
+    "badge": "Heirloom Silver"
+  }
+]
