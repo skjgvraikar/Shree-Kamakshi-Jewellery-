@@ -4,6 +4,5 @@ Disallow: /admin
 Disallow: /api/
 
 # Host & Sitemap specifications
-Host: https://shreekamakshijewellery.com
-Sitemap: https://shreekamakshijewellery.com/sitemap.xml
-
+Host: https://shree-kamakshi-jewellery.vercel.app
+Sitemap: https://shree-kamakshi-jewellery.vercel.app/sitemap.xml

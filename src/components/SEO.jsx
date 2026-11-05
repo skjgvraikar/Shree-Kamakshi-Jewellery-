@@ -4,26 +4,26 @@ import { Helmet } from 'react-helmet-async';
 export function SEO({
   title = 'Shree Kamakshi Jewellery Works | Best 916 Hallmark Gold & Silver Jewellery Shop in Talaguppa, Sagar',
   description = 'Shree Kamakshi Jewellery Works (ಶ್ರೀ ಕಾಮಾಕ್ಷಿ ಜ್ಯುವೆಲ್ಲರಿ ವರ್ಕ್ಸ್) - Premier jewellery showroom on B H Road, Talaguppa. BIS 916 Hallmark gold necklaces, bangles, bridal sets, rings & pooja silver. Live market rates & custom orders. Call 9448628575.',
-  canonical = 'https://shreekamakshijewellery.com',
-  ogImage = 'https://shreekamakshijewellery.com/images/god.jpg',
+  canonical = 'https://shree-kamakshi-jewellery.vercel.app',
+  ogImage = 'https://shree-kamakshi-jewellery.vercel.app/images/god.jpg',
 }) {
   // 1. JewelryStore Local Business Schema
   const jewelryStoreSchema = {
     '@context': 'https://schema.org',
     '@type': 'JewelryStore',
-    '@id': 'https://shreekamakshijewellery.com/#store',
+    '@id': 'https://shree-kamakshi-jewellery.vercel.app/#store',
     name: 'Shree Kamakshi Jewellery Works',
     alternateName: ['ಶ್ರೀ ಕಾಮಾಕ್ಷಿ ಜ್ಯುವೆಲ್ಲರಿ ವರ್ಕ್ಸ್', 'SKJ Jewellers Talaguppa', 'Shree Kamakshi Jewellers'],
     description: 'Premier authentic jewellery showroom in Talaguppa, Karnataka. Handcrafted BIS 916 Hallmark gold necklaces, bangles, bridal jewellery sets, solitaire rings, and sacred pooja silver ornaments.',
     image: [
-      'https://shreekamakshijewellery.com/images/god.jpg',
-      'https://shreekamakshijewellery.com/images/products/lakshmi-temple-necklace.webp',
-      'https://shreekamakshijewellery.com/images/products/peacock-carved-kada.webp',
+      'https://shree-kamakshi-jewellery.vercel.app/images/god.jpg',
+      'https://shree-kamakshi-jewellery.vercel.app/images/products/lakshmi-temple-necklace.webp',
+      'https://shree-kamakshi-jewellery.vercel.app/images/products/peacock-carved-kada.webp',
     ],
     telephone: ['+91-9448628575', '+91-8660419854'],
     email: 'skjgvraikar@gmail.com',
-    url: 'https://shreekamakshijewellery.com',
-    logo: 'https://shreekamakshijewellery.com/images/god.jpg',
+    url: 'https://shree-kamakshi-jewellery.vercel.app',
+    logo: 'https://shree-kamakshi-jewellery.vercel.app/images/god.jpg',
     founder: {
       '@type': 'Person',
       name: 'Veerendra G. Raikar',
@@ -141,12 +141,12 @@ export function SEO({
   const websiteSchema = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    url: 'https://shreekamakshijewellery.com/',
+    url: 'https://shree-kamakshi-jewellery.vercel.app/',
     name: 'Shree Kamakshi Jewellery Works',
     alternateName: 'ಶ್ರೀ ಕಾಮಾಕ್ಷಿ ಜ್ಯುವೆಲ್ಲರಿ ವರ್ಕ್ಸ್',
     potentialAction: {
       '@type': 'SearchAction',
-      target: 'https://shreekamakshijewellery.com/products?search={search_term_string}',
+      target: 'https://shree-kamakshi-jewellery.vercel.app/products?search={search_term_string}',
       'query-input': 'required name=search_term_string',
     },
   };
@@ -160,37 +160,37 @@ export function SEO({
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-        item: 'https://shreekamakshijewellery.com/',
+        item: 'https://shree-kamakshi-jewellery.vercel.app/',
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Live Rates',
-        item: 'https://shreekamakshijewellery.com/#rates',
+        item: 'https://shree-kamakshi-jewellery.vercel.app/#rates',
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: 'Collections',
-        item: 'https://shreekamakshijewellery.com/products',
+        item: 'https://shree-kamakshi-jewellery.vercel.app/products',
       },
       {
         '@type': 'ListItem',
         position: 4,
         name: 'Heritage',
-        item: 'https://shreekamakshijewellery.com/#heritage',
+        item: 'https://shree-kamakshi-jewellery.vercel.app/#heritage',
       },
       {
         '@type': 'ListItem',
         position: 5,
         name: 'Visit Showroom',
-        item: 'https://shreekamakshijewellery.com/#visit',
+        item: 'https://shree-kamakshi-jewellery.vercel.app/#visit',
       },
       {
         '@type': 'ListItem',
         position: 6,
         name: 'Contact',
-        item: 'https://shreekamakshijewellery.com/#contact',
+        item: 'https://shree-kamakshi-jewellery.vercel.app/#contact',
       },
     ],
   };
