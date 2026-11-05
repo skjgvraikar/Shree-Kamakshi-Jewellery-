@@ -27,12 +27,30 @@ const PORT = process.env.PORT || 5000;
 connectMongo()
   .then(() => {
     // Start automated 6-hour live market sync once DB is ready
-    startRatesScheduler();
+    if (!process.env.VERCEL) {
+      startRatesScheduler();
+    }
   })
   .catch((e) => {
     console.warn('Mongo init notice:', e.message);
-    startRatesScheduler();
+    if (!process.env.VERCEL) {
+      startRatesScheduler();
+    }
   });
+
+// Serverless MongoDB Reconnection & URL Normalization Middleware
+app.use(async (req, res, next) => {
+  if (process.env.VERCEL) {
+    const matchedPath = req.headers['x-matched-path'];
+    if (matchedPath && !req.url.startsWith('/api') && matchedPath.startsWith('/api')) {
+      req.url = matchedPath;
+    }
+    try {
+      await connectMongo();
+    } catch (_) {}
+  }
+  next();
+});
 
 // Middleware
 app.use(cors({
@@ -532,7 +550,8 @@ app.post('/api/admin/reset-password', adminOtpVerifyLimiter, async (req, res) =>
 const distDir = path.join(__dirname, '..', 'dist');
 if (fs.existsSync(distDir)) {
   app.use(express.static(distDir));
-  app.get('*', (req, res, next) => {
+  app.use((req, res, next) => {
+    if (req.method !== 'GET') return next();
     if (req.path.startsWith('/api') || req.path.startsWith('/uploads')) {
       return next();
     }
@@ -540,13 +559,17 @@ if (fs.existsSync(distDir)) {
   });
 }
 
-// Start listening
-app.listen(PORT, () => {
-  console.log(`=======================================================`);
-  console.log(`✦ Shree Kamakshi Jewellery Works - Backend API Engine ✦`);
-  console.log(`  Live at:  http://localhost:${PORT}`);
-  console.log(`  Database: MongoDB Atlas (Cluster0: shree_kamakshi)`);
-  console.log(`  Health:   http://localhost:${PORT}/api/health`);
-  console.log(`  Cloud:    ${isCloudinaryConfigured ? 'Cloudinary (Active)' : 'Local File Storage Fallback'}`);
-  console.log(`=======================================================`);
-});
+// Start listening if executed directly (e.g. node server/index.js)
+if (!process.env.VERCEL && process.env.NODE_ENV !== 'test') {
+  app.listen(PORT, () => {
+    console.log(`=======================================================`);
+    console.log(`✦ Shree Kamakshi Jewellery Works - Backend API Engine ✦`);
+    console.log(`  Live at:  http://localhost:${PORT}`);
+    console.log(`  Database: MongoDB Atlas (Cluster0: shree_kamakshi)`);
+    console.log(`  Health:   http://localhost:${PORT}/api/health`);
+    console.log(`  Cloud:    ${isCloudinaryConfigured ? 'Cloudinary (Active)' : 'Local File Storage Fallback'}`);
+    console.log(`=======================================================`);
+  });
+}
+
+export default app;

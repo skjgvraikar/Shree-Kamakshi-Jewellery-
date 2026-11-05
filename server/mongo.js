@@ -16,6 +16,11 @@ dotenv.config();
 let isConnected = false;
 
 export async function connectMongo() {
+  if (mongoose.connection.readyState === 1) {
+    isConnected = true;
+    return true;
+  }
+
   const uri = process.env.MONGODB_URI;
   if (!uri || uri.includes('<db_username>') || uri.includes('<db_password>')) {
     console.log('ℹ MONGODB_URI not configured. Operating in resilient JSON database mode.');

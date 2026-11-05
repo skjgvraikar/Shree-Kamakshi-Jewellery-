@@ -128,6 +128,9 @@ export async function fetchLiveMetalRates() {
  * Start the background 6-hour scheduler aligned with Indian market hours
  */
 export function startRatesScheduler() {
+  if (process.env.VERCEL) {
+    return;
+  }
   console.log('⏰ Starting 6-Hour Indian Bullion Market Rates Sync Engine...');
 
   // Initial fetch on server startup
