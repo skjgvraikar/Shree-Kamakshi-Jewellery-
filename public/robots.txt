@@ -6,3 +6,4 @@ Disallow: /api/
 # Host & Sitemap specifications
 Host: https://shreekamakshijewellery.com
 Sitemap: https://shreekamakshijewellery.com/sitemap.xml
+

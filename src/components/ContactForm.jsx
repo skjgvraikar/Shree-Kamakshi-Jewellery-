@@ -73,11 +73,12 @@ export function ContactForm({ settings, prefillData }) {
     setSubmitStatus(null);
     setErrorMessage('');
 
+    const cleanPhone = (data.phone || '').replace(/[\s\-\+\(\)]/g, '').replace(/^91/, '').replace(/^0/, '');
     const payload = {
       name: data.name.trim(),
-      phone: data.phone.trim(),
+      phone: cleanPhone || data.phone.trim(),
       email: data.email?.trim() || '',
-      type: data.type,
+      type: data.type || 'Gold Jewellery',
       message: data.message.trim(),
       createdAt: new Date().toISOString(),
     };
@@ -258,9 +259,9 @@ export function ContactForm({ settings, prefillData }) {
                     }`}
                     {...register('phone', {
                       required: isKn ? 'ಮೊಬೈಲ್ ಸಂಖ್ಯೆ ಅಗತ್ಯವಿದೆ' : 'Phone number is required',
-                      pattern: {
-                        value: /^[6-9]\d{9}$/,
-                        message: isKn ? 'ಸರಿಯಾದ 10 ಅಂಕಿಯ ಮೊಬೈಲ್ ಸಂಖ್ಯೆ ನಮೂದಿಸಿ' : 'Enter a valid 10-digit Indian mobile number',
+                      validate: (val) => {
+                        const clean = (val || '').replace(/[\s\-\+\(\)]/g, '').replace(/^91/, '').replace(/^0/, '');
+                        return (clean.length === 10 && /^[6-9]\d{9}$/.test(clean)) || (isKn ? 'ಸರಿಯಾದ 10 ಅಂಕಿಯ ಮೊಬೈಲ್ ಸಂಖ್ಯೆ ನಮೂದಿಸಿ' : 'Enter a valid 10-digit Indian mobile number');
                       },
                     })}
                     aria-invalid={errors.phone ? 'true' : 'false'}

@@ -525,6 +525,18 @@ app.post('/api/admin/reset-password', adminOtpVerifyLimiter, async (req, res) =>
   }
 });
 
+// Serve production frontend assets if built
+const distDir = path.join(__dirname, '..', 'dist');
+if (fs.existsSync(distDir)) {
+  app.use(express.static(distDir));
+  app.get('*', (req, res, next) => {
+    if (req.path.startsWith('/api') || req.path.startsWith('/uploads')) {
+      return next();
+    }
+    res.sendFile(path.join(distDir, 'index.html'));
+  });
+}
+
 // Start listening
 app.listen(PORT, () => {
   console.log(`=======================================================`);

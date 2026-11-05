@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "id": "enq-1793902950345",
+    "name": "Ganesh Kamath",
+    "phone": "9448628575",
+    "email": "ganesh.kamath@gmail.com",
+    "type": "Gold Jewellery",
+    "message": "Looking for 916 Hallmark Kasu Mala designs for wedding ceremony.",
+    "status": "New",
+    "createdAt": "2026-11-05T18:22:30.290Z"
+  },
+  {
+    "id": "enq-1793902729965",
+    "name": "Test Customer",
+    "phone": "9845123456",
+    "email": "test@example.com",
+    "type": "Gold Jewellery",
+    "message": "Testing enquiry submission from script",
+    "status": "New",
+    "createdAt": "2026-11-05T18:18:49.895Z"
+  }
+]
