@@ -222,9 +222,9 @@ export function ContactForm({ settings, prefillData }) {
                 <input
                   id="contact-name"
                   type="text"
-                  placeholder={isKn ? 'ಉದಾಹರಣೆಗೆ: ರಮೇಶ್ ಹೆಗಡೆ' : 'e.g. Ramesh Hegde'}
-                  className={`w-full bg-deep/90 border rounded-xl py-2.5 px-4 font-sans text-cream text-sm placeholder-cream/40 focus:outline-none transition ${
-                    errors.name ? 'border-red-500 ring-1 ring-red-500' : 'border-gold/30 focus:border-gold focus:ring-1 focus:ring-gold'
+                  placeholder={isKn ? 'ನಿಮ್ಮ ಪೂರ್ಣ ಹೆಸರನ್ನು ನಮೂದಿಸಿ' : 'Enter your full name'}
+                  className={`w-full bg-white text-stone-900 font-medium border rounded-xl py-2.5 px-4 font-sans text-sm placeholder:text-stone-400 focus:outline-none transition shadow-sm ${
+                    errors.name ? 'border-red-500 ring-2 ring-red-500/20' : 'border-stone-300 focus:border-amber-600 focus:ring-2 focus:ring-amber-500/20'
                   }`}
                   {...register('name', {
                     required: isKn ? 'ದಯವಿಟ್ಟು ಹೆಸರು ನಮೂದಿಸಿ' : 'Full name is required',
@@ -253,8 +253,8 @@ export function ContactForm({ settings, prefillData }) {
                     id="contact-phone"
                     type="tel"
                     placeholder={isKn ? '10 ಅಂಕಿಯ ಮೊಬೈಲ್ ಸಂಖ್ಯೆ' : '10-digit mobile number'}
-                    className={`w-full bg-deep/90 border rounded-xl py-2.5 px-4 font-sans text-cream text-sm placeholder-cream/40 focus:outline-none transition ${
-                      errors.phone ? 'border-red-500 ring-1 ring-red-500' : 'border-gold/30 focus:border-gold focus:ring-1 focus:ring-gold'
+                    className={`w-full bg-white text-stone-900 font-medium border rounded-xl py-2.5 px-4 font-sans text-sm placeholder:text-stone-400 focus:outline-none transition shadow-sm ${
+                      errors.phone ? 'border-red-500 ring-2 ring-red-500/20' : 'border-stone-300 focus:border-amber-600 focus:ring-2 focus:ring-amber-500/20'
                     }`}
                     {...register('phone', {
                       required: isKn ? 'ಮೊಬೈಲ್ ಸಂಖ್ಯೆ ಅಗತ್ಯವಿದೆ' : 'Phone number is required',
@@ -284,8 +284,8 @@ export function ContactForm({ settings, prefillData }) {
                     id="contact-email"
                     type="email"
                     placeholder="your.email@gmail.com"
-                    className={`w-full bg-deep/90 border rounded-xl py-2.5 px-4 font-sans text-cream text-sm placeholder-cream/40 focus:outline-none transition ${
-                      errors.email ? 'border-red-500 ring-1 ring-red-500' : 'border-gold/30 focus:border-gold focus:ring-1 focus:ring-gold'
+                    className={`w-full bg-white text-stone-900 font-medium border rounded-xl py-2.5 px-4 font-sans text-sm placeholder:text-stone-400 focus:outline-none transition shadow-sm ${
+                      errors.email ? 'border-red-500 ring-2 ring-red-500/20' : 'border-stone-300 focus:border-amber-600 focus:ring-2 focus:ring-amber-500/20'
                     }`}
                     {...register('email', {
                       pattern: {
@@ -313,11 +313,11 @@ export function ContactForm({ settings, prefillData }) {
                 </label>
                 <select
                   id="contact-type"
-                  className="w-full bg-deep/90 border border-gold/30 rounded-xl py-2.5 px-4 font-sans text-cream text-sm focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition cursor-pointer"
+                  className="w-full bg-white text-stone-900 font-medium border border-stone-300 rounded-xl py-2.5 px-4 font-sans text-sm focus:outline-none focus:border-amber-600 focus:ring-2 focus:ring-amber-500/20 transition cursor-pointer shadow-sm"
                   {...register('type')}
                 >
                   {ENQUIRY_TYPES.map((item) => (
-                    <option key={item.value} value={item.value} className="bg-[#120a03] text-cream">
+                    <option key={item.value} value={item.value} className="bg-white text-stone-900 font-medium py-1">
                       {item.label}
                     </option>
                   ))}
@@ -346,8 +346,8 @@ export function ContactForm({ settings, prefillData }) {
                   rows="4"
                   maxLength={500}
                   placeholder={isKn ? 'ವಿನ್ಯಾಸ, ಸಂದರ್ಭ, ಸಮಯ ಅಥವಾ ನೀವು ಕೇಳಬಯಸುವ ವಿವರಗಳನ್ನು ಬರೆಯಿರಿ...' : 'Tell us about the design, occasion, preferred timing, or questions you have...'}
-                  className={`w-full bg-deep/90 border rounded-xl py-2.5 px-4 font-sans text-cream text-sm placeholder-cream/40 focus:outline-none transition resize-none ${
-                    errors.message ? 'border-red-500 ring-1 ring-red-500' : 'border-gold/30 focus:border-gold focus:ring-1 focus:ring-gold'
+                  className={`w-full bg-white text-stone-900 font-medium border rounded-xl py-2.5 px-4 font-sans text-sm placeholder:text-stone-400 focus:outline-none transition resize-none shadow-sm ${
+                    errors.message ? 'border-red-500 ring-2 ring-red-500/20' : 'border-stone-300 focus:border-amber-600 focus:ring-2 focus:ring-amber-500/20'
                   }`}
                   {...register('message', {
                     required: isKn ? 'ದಯವಿಟ್ಟು ಸಂದೇಶ ನಮೂದಿಸಿ' : 'Please write a brief message',
