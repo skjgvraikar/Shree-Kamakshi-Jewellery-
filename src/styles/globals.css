@@ -31,14 +31,16 @@
     letter-spacing: -0.01em;
   }
 
-  /* Form inputs text and autofill styling */
+  /* Form inputs text and autofill styling - forces crisp black text */
   input[type="text"],
   input[type="tel"],
   input[type="email"],
   input[type="password"],
   textarea,
-  select {
-    color: #1c1917;
+  select,
+  select option {
+    color: #111827 !important;
+    -webkit-text-fill-color: #111827 !important;
   }
 
   input:-webkit-autofill,
@@ -46,7 +48,7 @@
   input:-webkit-autofill:focus,
   textarea:-webkit-autofill,
   select:-webkit-autofill {
-    -webkit-text-fill-color: #1c1917 !important;
+    -webkit-text-fill-color: #111827 !important;
     -webkit-box-shadow: 0 0 0px 1000px #ffffff inset !important;
     box-shadow: 0 0 0px 1000px #ffffff inset !important;
     transition: background-color 5000s ease-in-out 0s;

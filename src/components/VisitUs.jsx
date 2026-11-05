@@ -1,23 +1,104 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaDirections, FaClock } from 'react-icons/fa';
+import {
+  FaMapMarkerAlt,
+  FaPhoneAlt,
+  FaEnvelope,
+  FaDirections,
+  FaClock,
+  FaTrain,
+  FaBus,
+  FaCar,
+  FaCompass,
+  FaExternalLinkAlt,
+  FaShieldAlt,
+} from 'react-icons/fa';
 import SectionTitle from './SectionTitle';
 import OpenNowBadge from './OpenNowBadge';
 import { useLanguage } from '../context/LanguageContext';
 
 export function VisitUs({ settings }) {
   const { t, isKn } = useLanguage();
-  const addressText = isKn ? 'ಬಿ.ಎಚ್. ರಸ್ತೆ, ತಾಳಗುಪ್ಪ – 577430' : (settings?.address?.full || 'B H Road, Talaguppa – 577430');
-  const directionsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent('B H Road, Talaguppa 577430 Karnataka')}`;
+  const addressText = isKn
+    ? 'ಬಿ.ಎಚ್. ರಸ್ತೆ, ತಾಳಗುಪ್ಪ – 577430'
+    : settings?.address?.full || 'B H Road, Talaguppa – 577430';
+  const directionsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+    'B H Road, Talaguppa 577430 Karnataka'
+  )}`;
 
   const WEEKDAY_SCHEDULE = [
-    { day: isKn ? 'ಸೋಮವಾರ' : 'Monday', hours: isKn ? 'ಬೆಳಗ್ಗೆ 10:00 – ಮಧ್ಯಾಹ್ನ 2:30 ಮತ್ತು ಸಂಜೆ 4:00 – ರಾತ್ರಿ 9:30' : '10:00 AM – 2:30 PM & 4:00 PM – 9:30 PM', isHoliday: false },
-    { day: isKn ? 'ಮಂಗಳವಾರ' : 'Tuesday', hours: isKn ? 'ಬೆಳಗ್ಗೆ 10:00 – ಮಧ್ಯಾಹ್ನ 2:30 ಮತ್ತು ಸಂಜೆ 4:00 – ರಾತ್ರಿ 9:30' : '10:00 AM – 2:30 PM & 4:00 PM – 9:30 PM', isHoliday: false },
-    { day: isKn ? 'ಬುಧವಾರ' : 'Wednesday', hours: isKn ? 'ಬೆಳಗ್ಗೆ 10:00 – ಮಧ್ಯಾಹ್ನ 2:30 ಮತ್ತು ಸಂಜೆ 4:00 – ರಾತ್ರಿ 9:30' : '10:00 AM – 2:30 PM & 4:00 PM – 9:30 PM', isHoliday: false },
-    { day: isKn ? 'ಗುರುವಾರ' : 'Thursday', hours: isKn ? 'ಬೆಳಗ್ಗೆ 10:00 – ಮಧ್ಯಾಹ್ನ 2:30 ಮತ್ತು ಸಂಜೆ 4:00 – ರಾತ್ರಿ 9:30' : '10:00 AM – 2:30 PM & 4:00 PM – 9:30 PM', isHoliday: false },
-    { day: isKn ? 'ಶುಕ್ರವಾರ' : 'Friday', hours: isKn ? 'ಬೆಳಗ್ಗೆ 10:00 – ಮಧ್ಯಾಹ್ನ 2:30 ಮತ್ತು ಸಂಜೆ 4:00 – ರಾತ್ರಿ 9:30' : '10:00 AM – 2:30 PM & 4:00 PM – 9:30 PM', isHoliday: false },
-    { day: isKn ? 'ಶನಿವಾರ' : 'Saturday', hours: isKn ? 'ಬೆಳಗ್ಗೆ 10:00 – ಮಧ್ಯಾಹ್ನ 2:30 ಮತ್ತು ಸಂಜೆ 4:00 – ರಾತ್ರಿ 9:30' : '10:00 AM – 2:30 PM & 4:00 PM – 9:30 PM', isHoliday: false },
-    { day: isKn ? 'ಭಾನುವಾರ' : 'Sunday', hours: isKn ? 'ವಾರದ ರಜೆ (ದಿನಪೂರ್ತಿ ಮುಚ್ಚಿರುತ್ತದೆ)' : 'Weekly Holiday (Closed all day)', isHoliday: true },
+    {
+      day: isKn ? 'ಸೋಮವಾರ' : 'Monday',
+      hours: isKn
+        ? 'ಬೆಳಗ್ಗೆ 10:00 – ಮಧ್ಯಾಹ್ನ 2:30 ಮತ್ತು ಸಂಜೆ 4:00 – ರಾತ್ರಿ 9:30'
+        : '10:00 AM – 2:30 PM & 4:00 PM – 9:30 PM',
+      isHoliday: false,
+    },
+    {
+      day: isKn ? 'ಮಂಗಳವಾರ' : 'Tuesday',
+      hours: isKn
+        ? 'ಬೆಳಗ್ಗೆ 10:00 – ಮಧ್ಯಾಹ್ನ 2:30 ಮತ್ತು ಸಂಜೆ 4:00 – ರಾತ್ರಿ 9:30'
+        : '10:00 AM – 2:30 PM & 4:00 PM – 9:30 PM',
+      isHoliday: false,
+    },
+    {
+      day: isKn ? 'ಬುಧವಾರ' : 'Wednesday',
+      hours: isKn
+        ? 'ಬೆಳಗ್ಗೆ 10:00 – ಮಧ್ಯಾಹ್ನ 2:30 ಮತ್ತು ಸಂಜೆ 4:00 – ರಾತ್ರಿ 9:30'
+        : '10:00 AM – 2:30 PM & 4:00 PM – 9:30 PM',
+      isHoliday: false,
+    },
+    {
+      day: isKn ? 'ಗುರುವಾರ' : 'Thursday',
+      hours: isKn
+        ? 'ಬೆಳಗ್ಗೆ 10:00 – ಮಧ್ಯಾಹ್ನ 2:30 ಮತ್ತು ಸಂಜೆ 4:00 – ರಾತ್ರಿ 9:30'
+        : '10:00 AM – 2:30 PM & 4:00 PM – 9:30 PM',
+      isHoliday: false,
+    },
+    {
+      day: isKn ? 'ಶುಕ್ರವಾರ' : 'Friday',
+      hours: isKn
+        ? 'ಬೆಳಗ್ಗೆ 10:00 – ಮಧ್ಯಾಹ್ನ 2:30 ಮತ್ತು ಸಂಜೆ 4:00 – ರಾತ್ರಿ 9:30'
+        : '10:00 AM – 2:30 PM & 4:00 PM – 9:30 PM',
+      isHoliday: false,
+    },
+    {
+      day: isKn ? 'ಶನಿವಾರ' : 'Saturday',
+      hours: isKn
+        ? 'ಬೆಳಗ್ಗೆ 10:00 – ಮಧ್ಯಾಹ್ನ 2:30 ಮತ್ತು ಸಂಜೆ 4:00 – ರಾತ್ರಿ 9:30'
+        : '10:00 AM – 2:30 PM & 4:00 PM – 9:30 PM',
+      isHoliday: false,
+    },
+    {
+      day: isKn ? 'ಭಾನುವಾರ' : 'Sunday',
+      hours: isKn
+        ? 'ವಾರದ ರಜೆ (ದಿನಪೂರ್ತಿ ಮುಚ್ಚಿರುತ್ತದೆ)'
+        : 'Weekly Holiday (Closed all day)',
+      isHoliday: true,
+    },
+  ];
+
+  const LANDMARKS = [
+    {
+      icon: FaBus,
+      title: isKn ? 'ತಾಳಗುಪ್ಪ ಬಸ್ ನಿಲ್ದಾಣ' : 'Talaguppa Bus Stand',
+      detail: isKn ? 'ಕೇವಲ 2 ನಿಮಿಷಗಳ ನಡಿಗೆ (150 ಮೀ)' : '2 Mins Walk (150m) on B H Road',
+    },
+    {
+      icon: FaTrain,
+      title: isKn ? 'ತಾಳಗುಪ್ಪ ರೈಲ್ವೆ ನಿಲ್ದಾಣ' : 'Talaguppa Railway Station',
+      detail: isKn ? '800 ಮೀಟರ್ • 2 ನಿಮಿಷಗಳ ವಾಹನ ಪಯಣ' : '800m • 2 mins drive (Sagar Line)',
+    },
+    {
+      icon: FaDirections,
+      title: isKn ? 'ರಾಷ್ಟ್ರೀಯ ಹೆದ್ದಾರಿ 206' : 'NH-206 Highway Access',
+      detail: isKn ? 'ಸಾಗರ - ಜೋಗ ಜಲಪಾತ ಮುಖ್ಯ ರಸ್ತೆ' : 'Main Sagar – Jog Falls Highway Route',
+    },
+    {
+      icon: FaCar,
+      title: isKn ? 'ಉಚಿತ ವಾಹನ ನಿಲುಗಡೆ' : 'Dedicated Customer Parking',
+      detail: isKn ? 'ಮಳಿಗೆಯ ಮುಂಭಾಗ ಸುಲಭ ಪಾರ್ಕಿಂಗ್' : 'Convenient free parking & AC lounge',
+    },
   ];
 
   return (
@@ -140,48 +221,110 @@ export function VisitUs({ settings }) {
             </div>
           </motion.div>
 
-          {/* Right Column: Embedded Google Map */}
+          {/* Right Column: Luxury Showroom Navigation Showcase (Zero Permission Popups) */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-6 glass-gold-card rounded-3xl border border-gold/30 overflow-hidden flex flex-col justify-between"
+            className="lg:col-span-6 glass-gold-card p-6 sm:p-8 rounded-3xl border border-gold/30 flex flex-col justify-between relative overflow-hidden"
           >
-            <div className="relative w-full h-[360px] sm:h-[420px] bg-black/60">
-              <iframe
-                title="Google Map - Shree Kamakshi Jewellery Works, Talaguppa"
-                src="https://maps.google.com/maps?q=B+H+Road,+Talaguppa+577430&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                className="w-full h-full border-0 filter contrast-105"
-                allowFullScreen=""
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
+            {/* Background subtle luxury glow */}
+            <div className="absolute -top-24 -right-24 w-72 h-72 bg-gold/10 rounded-full blur-3xl pointer-events-none" />
 
-              {/* Map floating banner */}
-              <div className="absolute top-4 left-4 right-4 bg-deep/92 backdrop-blur-md p-3.5 rounded-xl border border-gold/40 shadow-lg flex items-center justify-between">
-                <div>
-                  <h5 className="font-sans text-xs font-bold text-cream">
-                    {isKn ? 'ಬಿ.ಎಚ್. ರಸ್ತೆ, ತಾಳಗುಪ್ಪ – 577430' : 'B H Road, Talaguppa – 577430'}
-                  </h5>
-                  <p className="font-sans text-[11px] text-gold-light">
-                    {isKn ? 'ಮುಖ್ಯ ಬಿ.ಎಚ್. ರಸ್ತೆಯಲ್ಲಿ ಸುಲಭವಾಗಿ ತಲುಪಬಹುದು' : 'Prominently located on main B H Road highway'}
-                  </p>
+            <div>
+              {/* Card Header */}
+              <div className="flex items-center justify-between gap-3 mb-6 pb-5 border-b border-gold/20">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-gold/20 text-gold border border-gold/40 flex items-center justify-center text-lg">
+                    <FaCompass />
+                  </div>
+                  <div>
+                    <span className="font-sans text-[11px] font-semibold text-gold uppercase tracking-wider block">
+                      {isKn ? 'ಸ್ಥಳ ಮತ್ತು ಮಾರ್ಗದರ್ಶಿ' : 'SHOWROOM LOCATION & ROUTE GUIDE'}
+                    </span>
+                    <h4 className="font-cinzel text-lg font-bold text-cream">
+                      {isKn ? 'ಸುಲಭವಾಗಿ ತಲುಪುವ ಮಾರ್ಗ' : 'How To Reach Our Showroom'}
+                    </h4>
+                  </div>
                 </div>
-                <a
-                  href={directionsUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-3 py-1 rounded-lg bg-gold-gradient text-deep font-sans text-[10px] font-bold uppercase tracking-wider hover:brightness-110 transition shadow-sm"
-                >
-                  {t.visit.navigateMap}
-                </a>
+
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gold/15 border border-gold/30 text-gold-light text-[11px] font-sans font-medium">
+                  <FaShieldAlt className="text-xs text-gold" />
+                  <span>{isKn ? 'ನೇರ ಮಾರ್ಗ' : 'Direct Highway'}</span>
+                </span>
+              </div>
+
+              {/* Showroom Route Highlights Grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mb-6">
+                {LANDMARKS.map((lm, i) => {
+                  const Icon = lm.icon;
+                  return (
+                    <div
+                      key={i}
+                      className="p-3.5 rounded-2xl bg-black/40 border border-gold/20 hover:border-gold/40 transition flex items-start gap-3"
+                    >
+                      <div className="p-2.5 rounded-xl bg-gold/10 text-gold border border-gold/25 flex-shrink-0 mt-0.5">
+                        <Icon className="text-sm" />
+                      </div>
+                      <div>
+                        <h5 className="font-sans text-xs font-bold text-cream">
+                          {lm.title}
+                        </h5>
+                        <p className="font-sans text-[11px] text-cream/65 mt-0.5">
+                          {lm.detail}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* Highway & Sagar-Taluk Note */}
+              <div className="p-4 rounded-2xl bg-gold/10 border border-gold/30 mb-6">
+                <div className="flex items-start gap-3">
+                  <FaMapMarkerAlt className="text-gold text-base flex-shrink-0 mt-0.5" />
+                  <div className="text-xs font-sans">
+                    <p className="font-semibold text-gold-pale mb-1">
+                      {isKn
+                        ? 'ಶ್ರೀ ಕಾಮಾಕ್ಷಿ ಜ್ಯುವೆಲ್ಲರಿ ವರ್ಕ್ಸ್ • ಬಿ.ಎಚ್. ರಸ್ತೆ, ತಾಳಗುಪ್ಪ'
+                        : 'Shree Kamakshi Jewellery Works • B.H. Road, Talaguppa'}
+                    </p>
+                    <p className="text-cream/70 text-[11px] leading-relaxed">
+                      {isKn
+                        ? 'ಸಾಗರ ತಾಲೂಕು, ಶಿವಮೊಗ್ಗ ಜಿಲ್ಲೆ. ತಾಳಗುಪ್ಪದ ಮುಖ್ಯ ಬಿ.ಎಚ್. ರಸ್ತೆಯಲ್ಲಿ ಸುಲಭವಾಗಿ ಗುರುತಿಸಬಹುದಾದ ಪ್ರಮುಖ ಜ್ಯುವೆಲ್ಲರಿ ಮಳಿಗೆ.'
+                        : 'Sagar Taluk, Shivamogga District – 577430. Situated right on the main B H Road with easy vehicle access and landmark visibility.'}
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
 
-            <div className="p-4 bg-black/50 border-t border-gold/20 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-sans text-cream/70">
-              <span>{t.visit.busStandText}</span>
-              <span className="text-gold font-medium">{t.visit.parkingText}</span>
+            {/* 1-Click Google Maps External Button (No Geolocation Permission Popups) */}
+            <div className="space-y-2.5 pt-4 border-t border-gold/20">
+              <a
+                href={directionsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full py-3.5 px-6 rounded-2xl bg-gold-gradient hover:bg-gold-gradient-hover text-deep font-sans font-bold text-xs tracking-wider uppercase transition shadow-gold-glow flex items-center justify-center gap-2.5 transform hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
+              >
+                <FaDirections className="text-base" />
+                <span>
+                  {isKn
+                    ? 'ಗೂಗಲ್ ಮ್ಯಾಪ್ಸ್‌ನಲ್ಲಿ ದಾರಿ ಪಡೆಯಿರಿ'
+                    : 'Open in Google Maps / Get Live Navigation'}
+                </span>
+                <FaExternalLinkAlt className="text-[10px] ml-1 opacity-75" />
+              </a>
+
+              <p className="font-sans text-[11px] text-center text-cream/50 flex items-center justify-center gap-1.5">
+                <FaShieldAlt className="text-gold/70 text-xs" />
+                <span>
+                  {isKn
+                    ? 'ಯಾವುದೇ ಅನಗತ್ಯ ಅನುಮತಿ ಕೇಳದೆ ನೇರವಾಗಿ ಗೂಗಲ್ ಮ್ಯಾಪ್ಸ್‌ನಲ್ಲಿ ತೆರೆಯುತ್ತದೆ'
+                    : 'Opens Google Maps directly without intrusive location permission popups'}
+                </span>
+              </p>
             </div>
           </motion.div>
         </div>
