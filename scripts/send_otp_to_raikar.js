@@ -43,3 +43,4 @@ dispatchOtpToRaikar().catch(err => {
   console.error('Error dispatching OTP:', err);
   process.exit(1);
 });
+

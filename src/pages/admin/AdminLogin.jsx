@@ -44,6 +44,10 @@ export function AdminLogin({ onLoginSuccess }) {
         onLoginSuccess(res.data.user);
       }
     } catch (err) {
+      if (err.response?.status === 429) {
+        setError(err.response?.data?.error || 'Too many failed login attempts. Access is temporarily locked. Please try again after 15 minutes.');
+        return;
+      }
       // Offline fallback: allow local testing credentials
       const cleanUser = username.trim().toLowerCase();
       if (
@@ -95,6 +99,14 @@ export function AdminLogin({ onLoginSuccess }) {
         setMode('forgot_step2');
       }
     } catch (err) {
+      if (err.response?.status === 429) {
+        setError(err.response?.data?.error || 'Too many OTP requests. Please wait 15 minutes before requesting a new code.');
+        return;
+      }
+      if (err.response?.status === 404) {
+        setError(err.response?.data?.error || 'No admin account found matching this username or email.');
+        return;
+      }
       // Offline mock fallback for OTP
       setMaskedEmail('sk***r@gmail.com');
       setResetMessage('OTP generated! Valid for 15 minutes.');

@@ -1,5 +1,6 @@
 import express from 'express';
 import cors from 'cors';
+import rateLimit from 'express-rate-limit';
 import path from 'path';
 import fs from 'fs';
 import { fileURLToPath } from 'url';
@@ -379,9 +380,56 @@ app.get('/api/analytics', async (req, res) => {
 });
 
 // ---------------------------------------------------------------------------
+// Rate Limiting Guards for Admin Authentication & Security
+// ---------------------------------------------------------------------------
+export const adminLoginLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15-minute window
+  max: 5, // Limit to 5 failed login attempts per 15 minutes per IP
+  skipSuccessfulRequests: true, // Legitimate successful logins do NOT count against the limit
+  standardHeaders: true, // Return RateLimit-* headers
+  legacyHeaders: false,
+  handler: (req, res) => {
+    res.status(429).json({
+      success: false,
+      error: 'Too many failed login attempts from this IP. For security, access is temporarily locked. Please try again after 15 minutes.',
+      retryAfterMinutes: 15,
+    });
+  },
+});
+
+export const adminOtpRequestLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15-minute window
+  max: 3, // Max 3 OTP emails per 15 minutes
+  standardHeaders: true,
+  legacyHeaders: false,
+  handler: (req, res) => {
+    res.status(429).json({
+      success: false,
+      error: 'Too many OTP requests from this address. Please wait 15 minutes before requesting a new code.',
+      retryAfterMinutes: 15,
+    });
+  },
+});
+
+export const adminOtpVerifyLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15-minute window
+  max: 5, // Max 5 incorrect OTP verification attempts
+  skipSuccessfulRequests: true,
+  standardHeaders: true,
+  legacyHeaders: false,
+  handler: (req, res) => {
+    res.status(429).json({
+      success: false,
+      error: 'Too many invalid OTP attempts. For security, please wait 15 minutes before trying again.',
+      retryAfterMinutes: 15,
+    });
+  },
+});
+
+// ---------------------------------------------------------------------------
 // Admin Login & Password Reset (Stored in MongoDB with Email OTP)
 // ---------------------------------------------------------------------------
-app.post('/api/admin/login', async (req, res) => {
+app.post('/api/admin/login', adminLoginLimiter, async (req, res) => {
   try {
     const { username, password } = req.body;
     if (!username || !password) {
@@ -409,7 +457,7 @@ app.post('/api/admin/login', async (req, res) => {
 });
 
 // Step 1: Request OTP for Forgot Password
-app.post('/api/admin/forgot-password', async (req, res) => {
+app.post('/api/admin/forgot-password', adminOtpRequestLimiter, async (req, res) => {
   try {
     const { emailOrUsername } = req.body;
     if (!emailOrUsername) {
@@ -451,7 +499,7 @@ app.post('/api/admin/forgot-password', async (req, res) => {
 });
 
 // Step 2: Reset Password with OTP
-app.post('/api/admin/reset-password', async (req, res) => {
+app.post('/api/admin/reset-password', adminOtpVerifyLimiter, async (req, res) => {
   try {
     const { emailOrUsername, otp, newPassword } = req.body;
     if (!emailOrUsername || !otp || !newPassword) {
