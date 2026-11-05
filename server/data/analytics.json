@@ -1,12 +1,48 @@
 {
-  "totalVisits": 0,
-  "uniqueVisitors": 0,
-  "cityBreakdown": [],
+  "totalVisits": 2,
+  "uniqueVisitors": 2,
+  "cityBreakdown": [
+    {
+      "city": "Talaguppa",
+      "region": "Karnataka",
+      "country": "India",
+      "count": 2
+    }
+  ],
   "deviceBreakdown": {
     "mobile": 0,
-    "desktop": 0,
+    "desktop": 2,
     "tablet": 0
   },
-  "dailyTrends": [],
-  "recentVisits": []
+  "dailyTrends": [
+    {
+      "date": "Nov 05",
+      "visits": 2,
+      "unique": 2
+    }
+  ],
+  "recentVisits": [
+    {
+      "id": "vis-1793901478141",
+      "timestamp": "2026-11-05T17:57:58.141Z",
+      "city": "Talaguppa",
+      "region": "Karnataka",
+      "country": "India",
+      "device": "Desktop",
+      "browser": "Chrome",
+      "path": "/",
+      "isLocal": true
+    },
+    {
+      "id": "vis-1793901395363",
+      "timestamp": "2026-11-05T17:56:35.363Z",
+      "city": "Talaguppa",
+      "region": "Karnataka",
+      "country": "India",
+      "device": "Desktop",
+      "browser": "Chrome",
+      "path": "/",
+      "isLocal": true
+    }
+  ]
 }

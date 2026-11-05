@@ -91,6 +91,37 @@ export function ProductsPage() {
           name="description"
           content={`Browse authentic handcrafted ${selectedCategory} ornaments in certified 916 BIS Hallmark gold and pure sterling silver from Shree Kamakshi Jewellery Works, Talaguppa.`}
         />
+        <link rel="canonical" href={`https://shreekamakshijewellery.com/products${selectedCategory !== 'All' ? `?category=${encodeURIComponent(selectedCategory)}` : ''}`} />
+        <meta property="og:title" content={`${getCategoryDisplayTitle()} | Shree Kamakshi Jewellery Works`} />
+        <meta
+          property="og:description"
+          content={`Explore our exclusive ${selectedCategory} collection in 916 Hallmark pure gold and silver in Talaguppa, Karnataka.`}
+        />
+        <meta property="og:url" content="https://shreekamakshijewellery.com/products" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://shreekamakshijewellery.com/images/god.jpg" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'CollectionPage',
+            name: `${getCategoryDisplayTitle()} - Shree Kamakshi Jewellery Works`,
+            url: 'https://shreekamakshijewellery.com/products',
+            description: `Browse authentic handcrafted ${selectedCategory} ornaments in certified 916 BIS Hallmark gold and pure sterling silver from Shree Kamakshi Jewellery Works, Talaguppa.`,
+            provider: {
+              '@type': 'JewelryStore',
+              name: 'Shree Kamakshi Jewellery Works',
+              telephone: '+91-9448628575',
+              address: {
+                '@type': 'PostalAddress',
+                streetAddress: 'B H Road, Talaguppa',
+                addressLocality: 'Talaguppa',
+                postalCode: '577430',
+                addressRegion: 'Karnataka',
+                addressCountry: 'IN',
+              },
+            },
+          })}
+        </script>
       </Helmet>
 
       {/* Navbar */}

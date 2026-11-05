@@ -7,6 +7,7 @@ import CategoryShowcase from '../components/CategoryShowcase';
 import Comparison from '../components/Comparison';
 import VisitUs from '../components/VisitUs';
 import ContactForm from '../components/ContactForm';
+import FAQ from '../components/FAQ';
 import Footer from '../components/Footer';
 import FloatingButtons from '../components/FloatingButtons';
 import SEO from '../components/SEO';
@@ -100,11 +101,14 @@ export function HomePage() {
         {/* 7. Visit Us */}
         <VisitUs settings={settings} />
 
-        {/* 8. Contact Us / Enquiry */}
+        {/* 8. Frequently Asked Questions (SEO Rich Snippets) */}
+        <FAQ />
+
+        {/* 9. Contact Us / Enquiry */}
         <ContactForm settings={settings} prefillData={prefillData} />
       </main>
 
-      {/* 9. Footer */}
+      {/* 10. Footer */}
       <Footer />
 
       {/* 10. Mobile Floating Quick Action Dock */}
