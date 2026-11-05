@@ -29,7 +29,6 @@ export function AdminLogin({ onLoginSuccess }) {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [resetMessage, setResetMessage] = useState('');
   const [maskedEmail, setMaskedEmail] = useState('');
-  const [demoOtpNotice, setDemoOtpNotice] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -63,16 +62,11 @@ export function AdminLogin({ onLoginSuccess }) {
         sessionStorage.setItem('skj_admin_user', JSON.stringify(mockUser));
         onLoginSuccess(mockUser);
       } else {
-        setError(err.response?.data?.error || 'Invalid credentials. Default: Amoga / AMOGA@2026 or admin / kamakshi@2025');
+        setError(err.response?.data?.error || 'Invalid credentials. Please verify your username and password.');
       }
     } finally {
       setLoading(false);
     }
-  };
-
-  const handleQuickFill = () => {
-    setUsername('Amoga');
-    setPassword('AMOGA@2026');
   };
 
   // Step 1: Request OTP email
@@ -83,7 +77,6 @@ export function AdminLogin({ onLoginSuccess }) {
     setLoading(true);
     setError('');
     setResetMessage('');
-    setDemoOtpNotice('');
 
     try {
       const res = await apiClient.post('/api/admin/forgot-password', {
@@ -92,10 +85,6 @@ export function AdminLogin({ onLoginSuccess }) {
       if (res.data.success) {
         setMaskedEmail(res.data.maskedEmail || 'registered email');
         setResetMessage(res.data.message);
-        if (res.data.previewOtp) {
-          setDemoOtpNotice(`(Console / Test OTP: ${res.data.previewOtp})`);
-          setOtpCode(res.data.previewOtp);
-        }
         setMode('forgot_step2');
       }
     } catch (err) {
@@ -107,12 +96,7 @@ export function AdminLogin({ onLoginSuccess }) {
         setError(err.response?.data?.error || 'No admin account found matching this username or email.');
         return;
       }
-      // Offline mock fallback for OTP
-      setMaskedEmail('sk***r@gmail.com');
-      setResetMessage('OTP generated! Valid for 15 minutes.');
-      setDemoOtpNotice('(Local Test OTP: 849201)');
-      setOtpCode('849201');
-      setMode('forgot_step2');
+      setError('Unable to send OTP. Please check your internet connection and try again.');
     } finally {
       setLoading(false);
     }
@@ -270,18 +254,6 @@ export function AdminLogin({ onLoginSuccess }) {
             >
               {loading ? 'Authenticating...' : 'Sign In to Dashboard'}
             </button>
-
-            {/* Quick Demo Fill */}
-            <div className="pt-3 text-center">
-              <button
-                type="button"
-                onClick={handleQuickFill}
-                className="inline-flex items-center gap-1.5 text-[11px] text-amber-700 hover:text-amber-900 font-semibold underline underline-offset-2 transition cursor-pointer"
-              >
-                <FaKey className="text-[10px]" />
-                <span>Quick Fill Credentials (Amoga / AMOGA@2026)</span>
-              </button>
-            </div>
           </form>
         )}
 
@@ -343,11 +315,6 @@ export function AdminLogin({ onLoginSuccess }) {
                 <FaCheckCircle className="text-emerald-600" />
                 <span>{resetMessage || `OTP sent to ${maskedEmail}`}</span>
               </p>
-              {demoOtpNotice && (
-                <p className="text-[11px] text-amber-800 font-mono font-bold">
-                  {demoOtpNotice}
-                </p>
-              )}
             </div>
 
             <div>

@@ -49,7 +49,7 @@ export function OverviewTab({ analytics, enquiries, rates, onTabChange }) {
           </div>
           <p className="text-xs text-emerald-600 mt-2 flex items-center gap-1 font-medium">
             <FaArrowUp className="text-[10px]" />
-            <span>+14.2% from last week</span>
+            <span>Real-time visitor counter</span>
           </p>
         </div>
 
@@ -148,38 +148,46 @@ export function OverviewTab({ analytics, enquiries, rates, onTabChange }) {
           </div>
 
           <div className="space-y-4">
-            {cityList.map((place, idx) => {
-              const pct = Math.round((place.count / totalVisits) * 100) || 1;
-              const barWidth = Math.round((place.count / maxCityCount) * 100);
+            {cityList.length === 0 ? (
+              <div className="py-8 text-center text-stone-400 text-xs">
+                <FaCity className="mx-auto text-2xl text-stone-300 mb-2" />
+                <p className="font-semibold text-stone-600">No visitor locations logged yet</p>
+                <p className="text-[11px] mt-0.5">Real-time geographic locations will populate here as customers visit the store website.</p>
+              </div>
+            ) : (
+              cityList.map((place, idx) => {
+                const pct = Math.round((place.count / totalVisits) * 100) || 1;
+                const barWidth = Math.round((place.count / maxCityCount) * 100);
 
-              return (
-                <div key={idx} className="space-y-1.5">
-                  <div className="flex items-center justify-between text-xs">
-                    <div className="flex items-center gap-2 font-medium text-stone-800">
-                      <span className="w-5 h-5 rounded-full bg-stone-100 text-stone-600 text-[10px] flex items-center justify-center font-bold">
-                        {idx + 1}
-                      </span>
-                      <span className="font-semibold text-stone-900">{place.city}</span>
-                      <span className="text-stone-400 text-[11px] font-normal">
-                        ({place.region}, {place.country})
-                      </span>
+                return (
+                  <div key={idx} className="space-y-1.5">
+                    <div className="flex items-center justify-between text-xs">
+                      <div className="flex items-center gap-2 font-medium text-stone-800">
+                        <span className="w-5 h-5 rounded-full bg-stone-100 text-stone-600 text-[10px] flex items-center justify-center font-bold">
+                          {idx + 1}
+                        </span>
+                        <span className="font-semibold text-stone-900">{place.city}</span>
+                        <span className="text-stone-400 text-[11px] font-normal">
+                          ({place.region}, {place.country})
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <span className="font-bold text-stone-900">{place.count} visits</span>
+                        <span className="text-amber-700 font-semibold w-10 text-right">{pct}%</span>
+                      </div>
                     </div>
-                    <div className="flex items-center gap-3">
-                      <span className="font-bold text-stone-900">{place.count} visits</span>
-                      <span className="text-amber-700 font-semibold w-10 text-right">{pct}%</span>
+
+                    {/* Progress bar */}
+                    <div className="w-full bg-stone-100 h-2 rounded-full overflow-hidden">
+                      <div
+                        className="bg-gradient-to-r from-amber-500 to-amber-400 h-full rounded-full transition-all duration-700"
+                        style={{ width: `${barWidth}%` }}
+                      />
                     </div>
                   </div>
-
-                  {/* Progress bar */}
-                  <div className="w-full bg-stone-100 h-2 rounded-full overflow-hidden">
-                    <div
-                      className="bg-gradient-to-r from-amber-500 to-amber-400 h-full rounded-full transition-all duration-700"
-                      style={{ width: `${barWidth}%` }}
-                    />
-                  </div>
-                </div>
-              );
-            })}
+                );
+              })
+            )}
           </div>
         </div>
 
@@ -246,7 +254,13 @@ export function OverviewTab({ analytics, enquiries, rates, onTabChange }) {
               Top Customer Hub
             </h4>
             <p className="text-xs text-amber-950/80 leading-relaxed">
-              <strong>Talaguppa & Sagar</strong> account for over 58% of all online visitors looking for 916 Hallmark rates and jewellery designs.
+              {cityList.length > 0 ? (
+                <>
+                  <strong>{cityList[0].city}</strong> is currently your highest visitor location ({Math.round((cityList[0].count / totalVisits) * 100) || 100}% of traffic).
+                </>
+              ) : (
+                <>Geographic visitor traffic will automatically display here as customers visit the store website.</>
+              )}
             </p>
           </div>
         </div>

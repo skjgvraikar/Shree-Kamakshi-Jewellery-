@@ -1,32 +1,12 @@
 [
   {
-    "id": "enq-101",
-    "name": "Ramesh Hegde",
-    "phone": "9845123456",
-    "email": "ramesh.hegde@gmail.com",
-    "type": "Custom Design",
-    "message": "Looking for a custom bridal antique Lakshmi temple necklace for my daughter wedding in December.",
-    "status": "New",
-    "createdAt": "2026-11-05T14:28:39.964Z"
-  },
-  {
-    "id": "enq-102",
-    "name": "Pooja Bhat",
-    "phone": "8762345678",
-    "email": "pooja.bhat@yahoo.com",
-    "type": "Gold Jewellery",
-    "message": "Interested in the Traditional Antique Kasu Mala design and current 22K Hallmark making charges.",
-    "status": "Contacted",
-    "createdAt": "2026-11-04T16:28:39.966Z"
-  },
-  {
-    "id": "enq-103",
-    "name": "Suresh Rao",
-    "phone": "9448112233",
-    "email": "suresh.rao@gmail.com",
+    "id": "enq-1793900199419",
+    "name": "Shivam Chaudhary",
+    "phone": "7667736039",
+    "email": "shivamchy076@gmail.com",
     "type": "Silver Items",
-    "message": "Need 1 kg pure silver pooja deepam set and silver coins for upcoming house warming ceremony.",
-    "status": "Completed",
-    "createdAt": "2026-11-02T16:28:39.966Z"
+    "message": "Hii",
+    "status": "New",
+    "createdAt": "2026-11-05T17:36:39.256Z"
   }
 ]

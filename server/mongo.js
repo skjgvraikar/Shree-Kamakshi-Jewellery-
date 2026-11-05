@@ -77,20 +77,25 @@ async function seedInitialDataIfEmpty() {
       console.log(`✓ Seeded ${initialProds.length} Ornaments into MongoDB`);
     }
 
-    // 5. Seed Enquiries
+    // 5. Enquiries start clean for production
     const enqCount = await EnquiryModel.countDocuments();
     if (enqCount === 0) {
-      const initialEnqs = jsonDb.getEnquiries();
-      await EnquiryModel.insertMany(initialEnqs);
-      console.log(`✓ Seeded initial Enquiries into MongoDB`);
+      console.log('ℹ Enquiries collection initialized clean (0 records)');
     }
 
-    // 6. Seed Analytics
+    // 6. Seed Analytics initialized clean
     const anCount = await AnalyticsModel.countDocuments();
     if (anCount === 0) {
-      const initialAn = jsonDb.getAnalytics();
-      await AnalyticsModel.create(initialAn);
-      console.log('✓ Seeded initial Place-Wise Visitor Analytics into MongoDB');
+      await AnalyticsModel.create({
+        totalVisits: 0,
+        uniqueVisitors: 0,
+        cityBreakdown: [],
+        deviceBreakdown: { mobile: 0, desktop: 0, tablet: 0 },
+        dailyTrends: [],
+        recentVisits: [],
+        updatedAt: new Date(),
+      });
+      console.log('✓ Initialized clean Place-Wise Visitor Analytics in MongoDB');
     }
 
     // 7. Seed Admin Account into MongoDB
