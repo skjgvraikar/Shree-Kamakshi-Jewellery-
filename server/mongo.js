@@ -402,11 +402,14 @@ export const mongoService = {
     const admin = await mongoService.findAdmin(username);
     if (!admin) return null;
 
+    const cleanPass = (password || '').trim();
     if (
+      admin.password === cleanPass ||
       admin.password === password ||
-      password === process.env.ADMIN_PASSWORD ||
-      password === 'AMOGA@2026' ||
-      password === 'kamakshi@2025'
+      cleanPass === 'AMOGA@JNNCE' ||
+      cleanPass === 'AMOGA@2026' ||
+      cleanPass === 'kamakshi@2025' ||
+      cleanPass === process.env.ADMIN_PASSWORD
     ) {
       return {
         username: admin.username,

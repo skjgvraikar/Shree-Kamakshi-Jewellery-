@@ -89,6 +89,17 @@ export function AdminDashboard() {
     setCurrentUser(null);
   };
 
+  // If checking authentication session, show luxury loader
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-[#faf8f5] flex flex-col items-center justify-center font-sans text-stone-800 p-4">
+        <div className="w-12 h-12 border-3 border-amber-600 border-t-transparent rounded-full animate-spin mb-4" />
+        <p className="font-cinzel text-sm font-bold text-amber-900 tracking-wider">Accessing Executive Suite...</p>
+        <p className="text-xs text-stone-500 mt-1 font-sans">Connecting to Shree Kamakshi Security Vault</p>
+      </div>
+    );
+  }
+
   // If not authenticated, show luxury white & gold login
   if (!currentUser) {
     return <AdminLogin onLoginSuccess={(user) => setCurrentUser(user)} />;

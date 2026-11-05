@@ -436,7 +436,10 @@ app.post('/api/admin/login', adminLoginLimiter, async (req, res) => {
       return res.status(400).json({ error: 'Username and password are required' });
     }
 
-    const verified = await mongoService.verifyAdminLogin(username, password);
+    const cleanUser = String(username).trim();
+    const cleanPass = String(password).trim();
+
+    const verified = await mongoService.verifyAdminLogin(cleanUser, cleanPass);
     if (verified) {
       return res.json({
         success: true,
