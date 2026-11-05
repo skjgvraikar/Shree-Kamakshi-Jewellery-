@@ -1,9 +1,12 @@
 import axios from 'axios';
 
-// When running on Vercel or same-origin domain, relative URL ('') automatically targets the current domain:
-// e.g. https://shree-kamakshi-jewellery.vercel.app/api/...
-// If a custom external API URL is explicitly configured in VITE_API_BASE_URL, use that instead.
-const baseURL = import.meta.env.VITE_API_BASE_URL || '';
+// API client configuration:
+// Always use same-origin relative path ('') by default.
+// - On Vercel: calls /api/... on current domain (e.g. https://shree-kamakshi-jewellery.vercel.app/api/...)
+// - In Local Dev: calls /api/... which Vite dev server proxies to http://localhost:5000
+// - External Backend: only used if VITE_API_BASE_URL is set to a non-localhost remote URL.
+const rawBaseURL = (import.meta.env.VITE_API_BASE_URL || '').trim();
+const baseURL = (rawBaseURL && !rawBaseURL.includes('localhost')) ? rawBaseURL : '';
 
 export const apiClient = axios.create({
   baseURL,
